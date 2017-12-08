@@ -20,11 +20,17 @@
 }
 
 .flexContentLeft {
+    padding: 0.4%;
+    border: 1px solid #004ba0;
+    box-shadow: 5px 10px 8px #004ba0;
     margin: 0.5%;
     flex-grow: 1;
 }
 
 .flexContentRight {
+    padding: 0.4%;
+    border: 1px solid #004ba0;
+    box-shadow: 5px 10px 8px #004ba0;
     margin: 0.5%;
     flex-grow: 1;
 }
