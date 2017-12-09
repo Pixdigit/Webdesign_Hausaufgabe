@@ -13,21 +13,36 @@
     margin: 19.032px 9.516px;
 }
 
-.TopicWrapper div {
+.TopicWrapper>div {
     padding: 7.609px;
 }
 
-.TopicWrapper div:last-of-type {
+.TopicWrapper>div:last-of-type {
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
 }
 
-.TopicWrapper div:first-of-type {
+.TopicWrapper>div:first-of-type {
     position: static;
 }
 
-.TopicWrapper div:first-of-type h2{
+.TopicWrapper>div:first-of-type h2{
     text-align: left;
+}
+
+#square {
+    position: relative;
+    top: 50%;
+    height: 100px;
+    margin: auto;
+    transform: translateY(-50px);
+}
+
+#rect {
+    fill: rgb(200, 200, 0);
+    stroke-width: 3;
+    stroke: rgb(0, 0, 0);
+
 }
