@@ -6,9 +6,24 @@
     max-height: 48px;
 }
 
-.Box {
-    padding: 7.609px;
+.TopicWrapper {
+    position: relative;
     border: 1px solid #004ba0;
     box-shadow: 5px 10px 8px #004ba0;
-    margin: 19.032px;
+    margin: 19.032px 9.516px;
+}
+
+.TopicWrapper div {
+    padding: 7.609px;
+}
+
+.TopicWrapper div:last-of-type {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.TopicWrapper div:first-of-type {
+    position: static;
 }
