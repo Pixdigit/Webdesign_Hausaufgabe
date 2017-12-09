@@ -27,3 +27,7 @@
 .TopicWrapper div:first-of-type {
     position: static;
 }
+
+.TopicWrapper div:first-of-type h2{
+    text-align: left;
+}
