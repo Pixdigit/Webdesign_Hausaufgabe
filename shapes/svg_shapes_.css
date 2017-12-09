@@ -5,3 +5,10 @@
     text-align: center;
     max-height: 3em;
 }
+
+.Intro {
+    padding: 7.609px;
+    border: 1px solid #004ba0;
+    box-shadow: 5px 10px 8px #004ba0;
+    margin: 9.516px;
+}
