@@ -32,7 +32,7 @@
     text-align: left;
 }
 
-#squareText {
+#rectText {
     padding-right: 135.218px;
 }
 
@@ -44,7 +44,7 @@
     100% {transform: scale(1,   1)   translateY(-60px);}
 }
 
-#square {
+#rectangular {
     position: relative;
     top: 50%;
     margin: auto;
