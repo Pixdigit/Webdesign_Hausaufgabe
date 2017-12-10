@@ -40,24 +40,40 @@
     margin: auto;
 }
 
-.svgAnimateMove {
+.svgCenterAnim {
+    border: 3px solid green;
     display: block;
-    animation-name: svgMove;
-    animation-duration: 10s;
+    margin: auto;
+    animation-name: svgFade;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
-@keyframes svgMove {
+#animTop {
+    
+}
+
+#animMiddle {
+    animation-delay: 5s;
+}
+
+#animBottom {
+    animation-delay: 10s;
+}
+@keyframes svgFade {
     0% {
-        margin-left: 100%;
         opacity: 0;
+        left: 50%;
     }
     50% {
-        margin-left: -100%;
         opacity: 1;
     }
     100% {
-        margin-left: 100%;
         opacity: 0;
+        left: -50%;
     }
+}
+
+.marker {
+    border: 3px solid red;
 }
