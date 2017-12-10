@@ -13,21 +13,83 @@
     margin: 19.032px 9.516px;
 }
 
-.TopicWrapper div {
+.TopicWrapper>div {
     padding: 7.609px;
 }
 
-.TopicWrapper div:last-of-type {
+.TopicWrapper>div:last-of-type {
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
 }
 
-.TopicWrapper div:first-of-type {
+.TopicWrapper>div:first-of-type {
+    padding-right: 135.218px;
     position: static;
 }
 
-.TopicWrapper div:first-of-type h2{
+.TopicWrapper>div:first-of-type h2{
     text-align: left;
+}
+
+@keyframes scaleAndMove {
+    0%   {transform: scale(1,   1)   translateY(-60px);}
+    25%  {transform: scale(1.2, 1)   translateY(-60px);}
+    50%  {transform: scale(1.2, 1.2) translateY(-50px);}
+    75%  {transform: scale(1,   1.2) translateY(-50px);}
+    100% {transform: scale(1,   1)   translateY(-60px);}
+}
+
+#rectangular {
+    position: relative;
+    top: 50%;
+    margin: auto;
+    animation-name: scaleAndMove;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#rect {
+    fill: rgb(200, 200, 0);
+    stroke-width: 3;
+    stroke: rgb(0, 0, 0);
+}
+
+@keyframes circleAndGrow {
+    0% {transform: scale(1, 1) translate(0, -72px);}
+    25% {transform: scale(1.1, 1.1) translate(6px, -60px);}
+    50% {transform: scale(1.2, 1.2) translate(0, -48px);}
+    75% {transform: scale(1.1, 1.1) translate(-6px, -60px);}
+    100% {transform: scale(1, 1) translate(0, -72px);}
+}
+
+#circle {
+    position: relative;
+    top: 50%;
+    height: 106px;
+    animation-name: circleAndGrow;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#circ {
+    fill: rgb(0, 120, 50);
+    stroke-width: 3;
+    stroke: rgb(0, 0, 0);
+}
+
+#ellipse {
+    position: relative;
+    top: 50%;
+    margin: auto;
+    animation-name: scaleAndMove;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#elli {
+    fill: rgb(200, 10, 10);
+    stroke-width: 3;
+    stroke: rgb(0, 0, 0);
 }
