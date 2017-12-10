@@ -32,6 +32,10 @@
     text-align: left;
 }
 
+#squareText {
+    padding-right: 135.218px;
+}
+
 @keyframes scaleAndMove {
     0%   {transform: scale(1,   1)   translateY(-60px);}
     25%  {transform: scale(1.2, 1)   translateY(-60px);}
