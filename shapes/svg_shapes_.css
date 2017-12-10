@@ -55,3 +55,26 @@
     stroke-width: 3;
     stroke: rgb(0, 0, 0);
 }
+
+@keyframes circleAndGrow {
+    0% {transform: scale(1, 1) translate(0, -72px);}
+    25% {transform: scale(1.1, 1.1) translate(6px, -60px);}
+    50% {transform: scale(1.2, 1.2) translate(0, -48px);}
+    75% {transform: scale(1.1, 1.1) translate(-6px, -60px);}
+    100% {transform: scale(1, 1) translate(0, -72px);}
+}
+
+#circle {
+    position: relative;
+    top: 50%;
+    height: 106px;
+    animation-name: circleAndGrow;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#circ {
+    fill: rgb(0, 120, 50);
+    stroke-width: 3;
+    stroke: rgb(0, 0, 0);
+}
