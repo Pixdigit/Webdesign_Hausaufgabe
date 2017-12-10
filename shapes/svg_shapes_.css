@@ -32,17 +32,25 @@
     text-align: left;
 }
 
+@keyframes scaleAndMove {
+    0%   {transform: scale(1,   1)   translateY(-60px);}
+    25%  {transform: scale(1.2, 1)   translateY(-60px);}
+    50%  {transform: scale(1.2, 1.2) translateY(-50px);}
+    75%  {transform: scale(1,   1.2) translateY(-50px);}
+    100% {transform: scale(1,   1)   translateY(-60px);}
+}
+
 #square {
     position: relative;
     top: 50%;
-    height: 100px;
     margin: auto;
-    transform: translateY(-50px);
+    animation-name: scaleAndMove;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 #rect {
     fill: rgb(200, 200, 0);
     stroke-width: 3;
     stroke: rgb(0, 0, 0);
-
 }
