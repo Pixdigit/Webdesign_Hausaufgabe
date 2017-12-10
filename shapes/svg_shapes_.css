@@ -25,15 +25,12 @@
 }
 
 .TopicWrapper>div:first-of-type {
+    padding-right: 135.218px;
     position: static;
 }
 
 .TopicWrapper>div:first-of-type h2{
     text-align: left;
-}
-
-#rectText {
-    padding-right: 135.218px;
 }
 
 @keyframes scaleAndMove {
