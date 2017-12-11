@@ -31,6 +31,13 @@
     flex-grow: 1;
 }
 
+.noBorderFlexContent {
+    padding: 0.4%;
+    margin: 0.5%;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
 .flexFooter {
     font-size: 9px;
 }
@@ -40,40 +47,27 @@
     margin: auto;
 }
 
-.svgCenterAnim {
-    border: 3px solid green;
+.animRotateSVGcentered {
     display: block;
     margin: auto;
-    animation-name: svgFade;
-    animation-duration: 15s;
+    animation-name: animRotate;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
 }
 
-#animTop {
-    
-}
-
-#animMiddle {
-    animation-delay: 5s;
-}
-
-#animBottom {
-    animation-delay: 10s;
-}
-@keyframes svgFade {
+@keyframes animRotate {
     0% {
-        opacity: 0;
-        left: 50%;
-    }
-    50% {
-        opacity: 1;
+        transform: rotate(0deg);
     }
     100% {
-        opacity: 0;
-        left: -50%;
+        transform: rotate(360deg);
     }
 }
 
 .marker {
+    border: 3px solid red;
+}
+
+#marker {
     border: 3px solid red;
 }
