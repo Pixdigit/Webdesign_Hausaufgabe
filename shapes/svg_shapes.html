@@ -15,27 +15,79 @@
         <a href="">SVG Text</a> &nbsp;| &nbsp;
         <a href="">SVG Shadows</a> &nbsp;| &nbsp;
         <a href="../gradients/svg_gradients.html">SVG Gradients</a> &nbsp;| &nbsp;
-        <a href="">SVG Blur</a>
+        <a href="../blur/svg_blur.html">SVG Blur</a>
     </p>
 
     <div class="TopicWrapper">
         <div>
             <h2>Einleitung</h2>
-            <p>SVG benutzt geometrische Figuren, sog. "Shapes", um Grafiken zu erzeugen.<br>
-            Im folgenden nun einige Beispiele zu den wichtigsten.</p>
+            <p>SVG benutzt geometrische Figuren, sog. "Shapes", um Grafiken zu erzeugen.
+                Shapes können beliebig kombiniert und überlagert werden.
+                Dargestellt wird aber immer in Leserichtung.
+                Also eine in der Textdatei weiter unten plazierte Shape überlagert alle, die davor definiert wurden.
+                Im folgenden nun einige Beispiele zu den wichtigsten.
+           </p>
+           <p>
+               Für eine Vollständige Referenz, schaue
+               <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Shape_elements">hier.</a>
+           </p>
         </div>
     </div>
     <div class="TopicWrapper">
         <div>
             <h2>Rechteck</h2>
-            <p>Eines der einfachsten grafischen Primitive.<br>
-                Es besteht nur aus einer Position sowie einer Breite und Höhe.</p>
+            <p>Eines der einfachsten grafischen Primitive.
+                Es besteht nur aus einer Position sowie einer Breite und Höhe.
+                In der Animation werden die vier Parameter verändert, wodurch ihre Auswirkung deutlich wird.<br>
+                In SVG wird ein Rechteck so repräsentiert:<br>
+                &lt;rect x="X-KOORDINATE" y="Y-KOORDINATE" width="BREITE" height="HÖHE"&gt;<br>
+                (Die Großbuchstaben werden natürlich durch entsprechende Werte ersetzt)
+            </p>
         </div>
         <div>
-            <h2>SVG</h2>
-            <svg width="100" height="100">
-                <rect x="0" y="0" width="100" height="100" style="fill:rgb(200, 200, 0);stroke-width:3;stroke:rgb(0, 0, 0)">
-            </svg>
+            <div id="rectangular">
+                <svg width="120" height="120">
+                    <rect id="rect" x="10" y="10" width="100" height="100">
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="TopicWrapper">
+        <div>
+            <h2>Kreis</h2>
+            <p>Wie das Rechteck ist auch dieses grafische Primitiv sehr einfach.
+                Es hat nur zwei Koordinaten für den Mittelpunk und einen Radius.
+                In der Animation werden die drei Parameter dargestellt.<br>
+                In SVG wird ein Kreis so repräsentiert:<br>
+                &lt;circle cx="MITTELPUNKT-X-KOORDINATE" cy="MITTELPUNKT-Y-KOORDINATE" r="RADIUS"&gt;<br>
+                (Auch hier werden die Großbuchstaben natürlich durch entsprechende Werte ersetzt)
+            </p>
+        </div>
+        <div>
+            <div id="circle">
+                <svg width="120" height="120">
+                    <circle id="circ" cx="60" cy="60" r="50">
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="TopicWrapper">
+        <div>
+            <h2>Ellipse</h2>
+            <p>Die Ellipse ist fast identisch zum Kreis. Sie hat hingegen aber zwei Radien.
+                Jeweils einen für x- und y-Ordinate.
+                In der Animation wird gezeigt, was die zwei Radien bewirken.<br>
+                In SVG wird eine Ellipse so repräsentiert:<br>
+                &lt;ellipse cx="MITTELPUNKT-X-KOORDINATE" cy="MITTELPUNKT-Y-KOORDINATE" rx="X-RADIUS" ry="Y-RADIUS"&gt;<br>
+                (Auch hier werden die Großbuchstaben natürlich durch entsprechende Werte ersetzt)
+            </p>
+        </div>
+        <div>
+            <div id="ellipse">
+                <svg width="120" height="120">
+                    <ellipse id="elli" cx="60" cy="60" rx="50" ry="50">
+                </svg>
+            </div>
         </div>
     </div>
 
