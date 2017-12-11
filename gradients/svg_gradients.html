@@ -71,8 +71,9 @@
             <div class="flexContent">
                 <h2>lineare Gradienten</h2>
                 <p>
-                    Dies ist ein linearer Gradient in einem Rechteck.
-                    Lineare Gradienten können horizontal, vertikal und angular verwendet werden.
+                    Lineare Gradienten können horizontal, vertikal und angular verwendet werden, abhängig davon welche der 4 Koordination der Gradient-Definition sich unterscheiden. So bekommt man einen
+                    lineargen Gradienten der horizontal oder vertikal verläuft wenn sich nur je eine <b>x</b> oder <b>y</b> Koordinate unterscheidet. Einen Angularen linearen Gradienten wenn sich beide
+                    Koordinaten unterscheiden.
                 </p>
                 <svg class="svgCenter" width="200" height="100">
                     <defs>
@@ -83,8 +84,8 @@
                     </defs>
                     <rect width="200" height="100" fill="url(#grad2)"></rect>
                 </svg>
-                <p>
-                    Oben ist ein Beispiel für ein horizontalen Gradienten, unten ein Beispiel für einen vertikalen.
+                <p id="centeredText">
+                    &bull;
                 </p>
                 <svg class="svgCenter" width="200" height="100">
                     <defs>
@@ -107,6 +108,36 @@
             </div>
             <div class="flexContent">
                 <h2>radiale Gradienten</h2>
+                <p>
+                    Radiale Gradienten sind, wie der Name schon andeutet kreisförmige Farbverläufe die anhand von 5 Variablen definiert werden. Es gibt mehr Möglichkeiten radiale Gradienten zu definieren
+                    als lineare Gradienten, und so können Sie sehr viele unterschiedliche Formen annehmen.
+                    Als Beispiele folgen unten zwei SVG's &lt;rect&gt; mit einem radialen Gradienten gefüllt welcher als zweiten &lt;stop&gt;-Tag eine Durchsichtigkeit von 0 hat. Der Unterschied zwischen den
+                    beiden ist das der rechte eine nur leichte Veränderung der <b>cx</b> Variable besitzt.
+                </p>
+                <div class="flexRow">
+                    <div class="noBorderFlexContent">
+                        <svg class="svgCenter" width="150" height="150">
+                            <defs>
+                                <radialGradient id="grad4" cx="40%" cy="40%" r="40%" fx="50%" fy="50%">
+                                    <stop offset="0%" style="stop-color:#004ba0;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"></stop>
+                                </radialGradient>
+                            </defs>
+                            <rect width="150" height="150" fill="url(#grad4)"></rect>
+                        </svg>
+                    </div>
+                    <div class="noBorderFlexContent">
+                        <svg class="svgCenter" width="150" height="150">
+                            <defs>
+                                <radialGradient id="grad5" cx="65%" cy="40%" r="40%" fx="50%" fy="50%">
+                                    <stop offset="0%" style="stop-color:#004ba0;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"></stop>
+                                </radialGradient>
+                            </defs>
+                            <rect width="150" height="150" fill="url(#grad5)"></rect>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="flexFooter">
