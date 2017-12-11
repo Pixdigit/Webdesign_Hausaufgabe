@@ -105,6 +105,16 @@
                     Nachdem ein Gradient in den &lt;defs&gt;-tags definiert wurde kann er auf den "fill" - teil einer SVG Definition angwendet werden indem statt einer Farbe angegeben wird: fill="url()" wobei
                     der Inhalt der Klammern die eindeutige ID des Gradienten ist.
                 </p>
+                <pre><code>
+                    &lt;svg width="150" height="150"&gt;
+                        &lt;defs&gt;
+                            &lt;radialGradient id="<b>grad4</b>" cx="40%" cy="40%" r="40%" fx="50%" fy="50%"&gt;
+                                &lt;stop offset="0%" style="stop-color:#004ba0;stop-opacity:1"&gt;&lt;/stop&gt;
+                                &lt;stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"&gt;&lt;/stop&gt;
+                            &lt;/radialGradient&gt;
+                        &lt;/defs&gt;
+                        &lt;rect width="150" height="150" fill="url(#<b>grad4</b>)"&gt;&lt;/rect&gt;
+                    &lt;/svg&gt;</code></pre>
             </div>
             <div class="flexContent">
                 <h2>radiale Gradienten</h2>
@@ -140,8 +150,8 @@
                 </div>
             </div>
         </div>
-        <div class="flexFooter">
-            <p>Footer</p>
+        <div class="noBorderFlexContent">
+            <p id="footer">Dies ist die Site zu SVG Gradienten der Gruppe :thinking: für die Hausaufgabe Webdesign im Wintersemester 2017 der Hochschule Flensburg</p>
         </div>
     </div>
 </body>

@@ -14,7 +14,7 @@
 }
 
 #centeredText {
-    text-align: center !important;
+    text-align: center;
 }
 
 .flexRow {
@@ -38,7 +38,7 @@
     flex-grow: 1;
 }
 
-.flexFooter {
+#footer {
     font-size: 9px;
 }
 
