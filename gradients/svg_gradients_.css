@@ -14,7 +14,7 @@
 }
 
 #centeredText {
-    text-align: center !important;
+    text-align: center;
 }
 
 .flexRow {
@@ -31,7 +31,14 @@
     flex-grow: 1;
 }
 
-.flexFooter {
+.noBorderFlexContent {
+    padding: 0.4%;
+    margin: 0.5%;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+#footer {
     font-size: 9px;
 }
 
@@ -40,24 +47,27 @@
     margin: auto;
 }
 
-.svgAnimateMove {
+.animRotateSVGcentered {
     display: block;
-    animation-name: svgMove;
+    margin: auto;
+    animation-name: animRotate;
     animation-duration: 10s;
     animation-iteration-count: infinite;
 }
 
-@keyframes svgMove {
+@keyframes animRotate {
     0% {
-        margin-left: 100%;
-        opacity: 0;
-    }
-    50% {
-        margin-left: -100%;
-        opacity: 1;
+        transform: rotate(0deg);
     }
     100% {
-        margin-left: 100%;
-        opacity: 0;
+        transform: rotate(360deg);
     }
+}
+
+.marker {
+    border: 3px solid red;
+}
+
+#marker {
+    border: 3px solid red;
 }

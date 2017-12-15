@@ -19,16 +19,17 @@
                 <a href="">SVG Text</a> &nbsp;| &nbsp;
                 <a href="">SVG Shadows</a> &nbsp;| &nbsp;
                 <a href="svg_gradients.html">SVG Gradients</a> &nbsp;| &nbsp;
-                <a href="">SVG Blur</a>
+                <a href="../blur/svg_blur.html">SVG Blur</a>
             </p>
         </div>
         <div class="flexRow">
             <div class="flexContent">
                 <h2>Einleitung</h2>
                 <p>
-                    SVG Gradienten sind Farbverläufe innerhalb von SVG Shapes, dabei ist die grundlegende Idee einen solchen Farbverlauf vorher zu definieren und dann auf Shapes oder Strokes an zu wenden.
+                    SVG Gradienten sind Farbverläufe innerhalb von SVG, dabei ist die grundlegende Idee einen solchen Farbverlauf vorher zu definieren und dann auf jeden beliebigen SVG fill an zu wenden.
                     So besitzt der Gradient Koordinaten, welche Angeben in welche Richtung der Farbverlauf gehen soll, sowie den Stil des Farbverlaufes und die Eigenschaften der
-                    Farbe wie Farbton oder Durchsichtigkeit.
+                    Farbe wie Farbton oder Durchsichtigkeit. Dabei muss darauf geachtet werden dass die Beschreibung des Gradienten in einer besonderen &lt;defs&gt; Anweisung
+                    geschieht, welche laut W3 für die Definition von besonderen Elementen vorgesehen ist.
                 </p>
             </div>
         </div>
@@ -38,57 +39,119 @@
                 <p>
                     Die Defintion eines Gradienten beginnt mit der &lt;linearGradient&gt; oder der &lt;radialGradient&gt; Anweisung. Darauf folgend bekommt jeder Gradient eine einzigartige ID zugewiesen indem
                     id="" im Gradient Block definiert wird. Darauf folgen die Koordinaten des Farbverlaufes welche abhängig von der Art des Gradienten entweder in <b>x1, y1, x2, y2</b> für <b>lineare Gradienten</b>
-                    oder in <b>cx, cy, r, fx, fy</b> für <b>radiale Gradienten</b> definiert werden.
+                    oder in <b>cx, cy, r, fx, fy</b> für <b>radiale Gradienten</b> definiert werden. Daraufhin wird in &lt;stop&gt;-tags definiert an welchen Stellen (in %) der Gradient welche Eigenschaften, wie
+                    Farbe oder Durchsichtigkeit annehmen soll.
                 </p>
-                <svg class="svgAnimateMove" width="200" height="100">
-                    <defs>
-                        <linearGradient id="grad4" x1="100%" y1="50%" x2="0%" y2="0%">
-                            <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1"></stop>
-                            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"></stop>
-                        </linearGradient>
-                    </defs>
-                    <rect width="200" height="100" fill="url(#grad4)"></rect>
-                </svg>
+                <div class="flexRow">
+                    <div class="noBorderFlexContent">
+                            <svg class="animRotateSVGcentered" width="150" height="150">
+                                <defs>
+                                    <linearGradient id="circleGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1"></stop>
+                                        <stop offset="100%" style="stop-color:rgb(240,240,240);stop-opacity:1"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="75" cy="75" r="75" fill="url(#circleGrad1)"></circle>
+                            </svg>
+                    </div>
+                    <div class="noBorderFlexContent">
+                        <svg class="animRotateSVGcentered" width="150" height="150">
+                            <defs>
+                                <linearGradient id="circleGrad2" x1="100%" y1="0%" x2="0%" y2="0%">
+                                    <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1"></stop>
+                                    <stop offset="50%" style="stop-color:rgb(0,75,160);stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:rgb(240,240,240);stop-opacity:1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="75" cy="75" r="75" fill="url(#circleGrad2)"></circle>
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="flexContent">
                 <h2>lineare Gradienten</h2>
                 <p>
-                    Dies ist ein linearer Gradient in einem Rechteck.
-                    Lineare Gradienten können horizontal, vertikal und angular verwendet werden.
+                    Lineare Gradienten können horizontal, vertikal und angular verwendet werden, abhängig davon welche der 4 Koordination der Gradient-Definition sich unterscheiden. So bekommt man einen
+                    lineargen Gradienten der horizontal oder vertikal verläuft wenn sich nur je eine <b>x</b> oder <b>y</b> Koordinate unterscheidet. Einen Angularen linearen Gradienten wenn sich beide
+                    Koordinaten unterscheiden.
                 </p>
                 <svg class="svgCenter" width="200" height="100">
                     <defs>
                         <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:rgb(240,240,240);stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1"></stop>
+                            <stop offset="100%" style="stop-color:rgb(240,240,240);stop-opacity:1"></stop>
                         </linearGradient>
                     </defs>
-                    <rect width="200" height="100" fill="url(#grad2)" />
+                    <rect width="200" height="100" fill="url(#grad2)"></rect>
                 </svg>
-                <p>
-                    Oben ist ein Beispiel für ein horizontalen Gradienten, unten ein Beispiel für einen vertikalen.
+                <p id="centeredText">
+                    &bull;
                 </p>
                 <svg class="svgCenter" width="200" height="100">
                     <defs>
                         <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:rgb(240,240,240);stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:rgb(25,118,210);stop-opacity:1"></stop>
+                            <stop offset="100%" style="stop-color:rgb(240,240,240);stop-opacity:1"></stop>
                         </linearGradient>
                     </defs>
-                    <rect width="200" height="100" fill="url(#grad3)" />
+                    <rect width="200" height="100" fill="url(#grad3)"></rect>
                 </svg>
             </div>
         </div>
         <div class="flexRow">
             <div class="flexContent">
                 <h2>Einen Gradienten auf SVG anwenden</h2>
+                <p>
+                    Nachdem ein Gradient in den &lt;defs&gt;-tags definiert wurde kann er auf den "fill" - teil einer SVG Definition angwendet werden indem statt einer Farbe angegeben wird: fill="url()" wobei
+                    der Inhalt der Klammern die eindeutige ID des Gradienten ist.
+                </p>
+                <pre><code>
+                    &lt;svg width="150" height="150"&gt;
+                        &lt;defs&gt;
+                            &lt;radialGradient id="<b>grad4</b>" cx="40%" cy="40%" r="40%" fx="50%" fy="50%"&gt;
+                                &lt;stop offset="0%" style="stop-color:#004ba0;stop-opacity:1"&gt;&lt;/stop&gt;
+                                &lt;stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"&gt;&lt;/stop&gt;
+                            &lt;/radialGradient&gt;
+                        &lt;/defs&gt;
+                        &lt;rect width="150" height="150" fill="url(#<b>grad4</b>)"&gt;&lt;/rect&gt;
+                    &lt;/svg&gt;</code></pre>
             </div>
             <div class="flexContent">
                 <h2>radiale Gradienten</h2>
+                <p>
+                    Radiale Gradienten sind, wie der Name schon andeutet kreisförmige Farbverläufe die anhand von 5 Variablen definiert werden. Es gibt mehr Möglichkeiten radiale Gradienten zu definieren
+                    als lineare Gradienten, und so können Sie sehr viele unterschiedliche Formen annehmen.
+                    Als Beispiele folgen unten zwei SVG's &lt;rect&gt; mit einem radialen Gradienten gefüllt welcher als zweiten &lt;stop&gt;-Tag eine Durchsichtigkeit von 0 hat. Der Unterschied zwischen den
+                    beiden ist das der rechte eine nur leichte Veränderung der <b>cx</b> Variable besitzt.
+                </p>
+                <div class="flexRow">
+                    <div class="noBorderFlexContent">
+                        <svg class="svgCenter" width="150" height="150">
+                            <defs>
+                                <radialGradient id="grad4" cx="40%" cy="40%" r="40%" fx="50%" fy="50%">
+                                    <stop offset="0%" style="stop-color:#004ba0;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"></stop>
+                                </radialGradient>
+                            </defs>
+                            <rect width="150" height="150" fill="url(#grad4)"></rect>
+                        </svg>
+                    </div>
+                    <div class="noBorderFlexContent">
+                        <svg class="svgCenter" width="150" height="150">
+                            <defs>
+                                <radialGradient id="grad5" cx="65%" cy="40%" r="40%" fx="50%" fy="50%">
+                                    <stop offset="0%" style="stop-color:#004ba0;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"></stop>
+                                </radialGradient>
+                            </defs>
+                            <rect width="150" height="150" fill="url(#grad5)"></rect>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="flexFooter">
-            <p>Footer</p>
+        <div class="noBorderFlexContent">
+            <p id="footer">Dies ist die Site zu SVG Gradienten der Gruppe :thinking: für die Hausaufgabe Webdesign im Wintersemester 2017 der Hochschule Flensburg</p>
         </div>
     </div>
 </body>

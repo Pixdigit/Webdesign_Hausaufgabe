@@ -1,0 +1,41 @@
+.tabelle {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.tabelle_box {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.zeile{
+    display: table-row;
+}
+
+.zelle_menu_oben{
+    display: table-cell;
+}
+
+.zelle_menu_unten{
+    display: table-cell;
+    background-color: #004ba0;
+    margin: 2%;
+    border: dashed;
+}
+
+.zelle_text{
+    display: table-cell;
+}
+
+.boxblur{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 1em;
+    border: 1px solid #004ba0;
+    box-shadow: 5px 10px 8px #004ba0;
+    margin: 19.032px 9.516px;
+}

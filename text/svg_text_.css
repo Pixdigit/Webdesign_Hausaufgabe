@@ -1,0 +1,38 @@
+header {
+    margin: 0 auto;
+}
+
+nav {
+    padding: 1em;
+    border-top: 1.5px solid #1976d2;
+    border-bottom: 1.5px solid #1976d2;
+    text-align: center;
+    max-height: 3em;
+}
+
+section {
+    padding: 1em;
+    border: 1px solid #004ba0;
+    box-shadow: 5px 10px 8px #004ba0;
+    margin: 19.032px 9.516px;
+    width: 850px;
+    height: auto;
+}
+
+#intro {
+    float: none;
+    width: auto;
+}
+
+.left {
+    clear: both;
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#p1 svg {
+    margin-left: 300px;
+}
