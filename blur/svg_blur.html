@@ -12,7 +12,7 @@
         <h1>SVG Filter und Blur-Effekte 🤔</h1>
       </div>
 
-      <div class="navbar" id="navbar">
+      <div class="navbar">
         <a href="../index.html">Index</a> &nbsp;| &nbsp;
         <a href="../shapes/svg_shapes.html">SVG Shapes</a> &nbsp;| &nbsp;
         <a href="">SVG Text</a> &nbsp;| &nbsp;
@@ -21,17 +21,17 @@
         <a href="./svg_blur.html">SVG Blur</a>
       </div>
 
-      <div class="blurb">
-        <h2>Einleitung</h2>
+      <div class="contentBox" id="einleitung">
+        <h2 id="headerEinleitung">Einleitung</h2>
         <p>SVG liefert Unterstützung für eine ganze Reihe von verschiedenen Filtern, die auf SVG-Elemente angewandt werden können. Sie werden innerhalb eines SVG-Elements in einem &lt;defs&gt;-Element (für <i>definitions</i>) definiert. Als Beispiel soll der Blur-Effekt, genauer Gauss'scher Blur-Effekt dienen.</p>
       </div>
 
-      <div class="p1">
+      <div class="contentBox" id="definitionElement">
         <h2>SVG-Element definieren</h2>
         <p>Zunächst wird das gewünschte SVG-Element erstellt. In unserem Beispiel erstellen wir ein auf dem Kopf stehendes Dreieck. Das SVG-Element definiert zunächst die Größe, 120 mal 120 Pixel. Dann definieren wir ein Polygon mit drei Punkten (10,10 = oben links, 110,0 = oben rechts und 60,110 = unten mittig) und füllen es mit einer Farbe.</p>
       </div>
 
-      <div class="code1">
+      <div class="contentBox" id="codeOhneGauss">
         <pre><code>
 &lt;svg width="120px" height="120px"&gt;
   &lt;polygon points="10,10 110,10 60,110" style="fill:#004ba0" /&gt;
@@ -39,18 +39,18 @@
         </code></pre>
       </div>
 
-      <div class="bild1">
+      <div class="contentBox" id="gaussHinzufügen">
+        <h2>Gauss-Effekt hinzufügen</h2>
+        <p>Nun wollen wir einen Filter hinzufügen, der das Dreieck unscharf macht, ein Blur-Effekt. SVG bietet uns dazu den Gaussian Blur. Um ihn zu verwenden, erstellen wir <i>Definitions</i> in einem &lt;def&gt;-Element. Im &lt;def&gt;-Element erstellen wir ein &lt;filter&gt;-Element, das eine id erhält, um es später anzusprechen. Im &lt;filter&gt;-Element definieren wir nun unseren Gauss-Effekt als ein &lt;feGaussianBlur&gt;-Element. Hier definiert in="SourceGraphic" den Effekt für das ganze Element und stdDeviation gibt die Stärke des Effekts an. Unserem Polygon-Element weisen wir nun mit filter="url(#gauss)" den Filter mit der id gauss zu.</p>
+      </div>
+
+      <div class="contentBox" id="bildOhneGauss">
         <svg width="120" height="120">
           <polygon points="10,10 110,10 60,110" style="fill:#004ba0" />
         </svg>
       </div>
 
-      <div class="p2">
-        <h2>Gauss-Effekt hinzufügen</h2>
-        <p>Nun wollen wir einen Filter hinzufügen, der das Dreieck unscharf macht, ein Blur-Effekt. SVG bietet uns dazu den Gaussian Blur. Um ihn zu verwenden, erstellen wir <i>Definitions</i> in einem &lt;def&gt;-Element. Im &lt;def&gt;-Element erstellen wir ein &lt;filter&gt;-Element, das eine id erhält, um es später anzusprechen. Im &lt;filter&gt;-Element definieren wir nun unseren Gauss-Effekt als ein &lt;feGaussianBlur&gt;-Element. Hier definiert in="SourceGraphic" den Effekt für das ganze Element und stdDeviation gibt die Stärke des Effekts an. Unserem Polygon-Element weisen wir nun mit filter="url(#gauss)" den Filter mit der id gauss zu.</p>
-      </div>
-
-      <div class="code2">
+      <div class="contentBox" id="codeMitGauss">
 <pre><code>
 &lt;svg width="120px" height="120px"&gt;
   &lt;defs&gt;
@@ -62,9 +62,8 @@
 &lt;/svg&gt;
 </code></pre>
       </div>
-
-      <div class="animationContainer">
-        <svg id="animation" width="120px" height="120px">
+      <div class="contentBox" id="bildMitGauss">
+          <svg width="120px" height="120px">
           <defs>
             <filter id="gauss">
               <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
@@ -73,7 +72,6 @@
           <polygon points="10,10 110,10 60,110" style="fill:#004ba0" filter="url(#gauss)">
         </svg>
       </div>
-
     </div>
   </body>
 </html>

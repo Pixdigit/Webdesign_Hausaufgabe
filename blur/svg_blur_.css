@@ -1,17 +1,15 @@
 .grid {
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 }
 
 .header {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column: 1 / span 2;
 }
 
 .navbar {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column: 1 / span 2;
   padding: 1em;
   border-top: 1.5px solid #1976d2;
   border-bottom: 1.5px solid #1976d2;
@@ -19,65 +17,57 @@
   max-height: 3em;
 }
 
-.blurb {
-  grid-column-start: 1;
-  grid-column-end: 3;
+.contentBox {
   padding: 1em;
   border: 1px solid #004ba0;
   box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
+  margin: 0.5em;
 }
 
-.p1 {
-  padding: 1em;
-  border: 1px solid #004ba0;
-  box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
+#einleitung {
+  grid-column: 1 / span 2;
 }
 
-.code1 {
-  padding: 1em;
-  border: 1px solid #004ba0;
-  box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
-}
-
-.bild1 {
-  padding: 1em;
-  border: 1px solid #004ba0;
-  box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
-}
-
-.p2 {
-  padding: 1em;
-  border: 1px solid #004ba0;
-  box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
-}
-
-
-.code2 {
-  padding: 1em;
-  border: 1px solid #004ba0;
-  box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
-}
-
-.animationContainer {
-  padding: 1em;
-  border: 1px solid #004ba0;
-  box-shadow: 5px 10px 8px #004ba0;
-  margin: 19.032px 9.516px;
-}
-
-@keyframes rotate {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
-}
-
-#animation {
-  animation-name: rotate;
+#headerEinleitung {
+  animation-name: blur;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+}
+
+#definitionElement {
+  grid-column: 1 / span 1;
+  grid-row: 4;
+}
+
+#codeOhneGauss {
+  grid-column: 2 / span 1;
+  grid-row: 4;
+}
+
+#bildOhneGauss {
+  grid-column: 1 / span 1;
+  grid-row: 5;
+  text-align: center;
+}
+
+#gaussHinzufügen {
+  grid-column: 2 / span 1;
+  grid-row: 5;
+}
+
+#codeMitGauss {
+  grid-column: 1 / span 1;
+  grid-row: 6;
+}
+
+#bildMitGauss {
+  grid-column: 2 / span 1;
+  grid-row: 6;
+  text-align: center;
+}
+
+@keyframes blur {
+  0% {filter: blur(0px);}
+  50% {filter: blur(2px);}
+  100% {filter: blur(0px);}
 }
