@@ -15,7 +15,7 @@ section {
     border: 1px solid #004ba0;
     box-shadow: 5px 10px 8px #004ba0;
     margin: 19.032px 9.516px;
-    width: 850px;
+    width: 45%;
     height: auto;
 }
 
@@ -24,15 +24,39 @@ section {
     width: auto;
 }
 
-.left {
-    clear: both;
-    float: left;
+
+
+@media screen and (min-width:1101px) {
+    .left {
+        clear: both;
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+}
+@media screen and (max-width:1100px) {
+    .left {
+        float: none;
+        width: auto;
+    }
+
+    .right {
+        float: none;
+        width: auto;
+    }
 }
 
-.right {
-    float: right;
+@keyframes move {
+    0% { margin-left: 10px; opacity: 1; }
+    50% { margin-left: 50px; opacity: 0.5;}
+    100% { margin-left: 10px; opacity: 1;}
 }
 
-#p1 svg {
-    margin-left: 300px;
+svg {
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Hausarbeit 2017 - SVG Text</title>
-    <link href="../shared.css" rel="stylesheet" type="text/css" />
-    <link href="svg_text_.css" rel="stylesheet" type="text/css" />
+    <link href="../shared.css" rel="stylesheet" type="text/css"/>
+    <link href="svg_text_.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
@@ -13,62 +13,94 @@
 </header>
 
 <nav>
-    <p>
-        <a href="../index.html">Index</a> &nbsp;| &nbsp;
-        <a href="../shapes/svg_shapes.html">SVG Shapes</a> &nbsp;| &nbsp;
-        <a href="">SVG Text</a> &nbsp;| &nbsp;
-        <a href="">SVG Shadows</a> &nbsp;| &nbsp;
-        <a href="svg_gradients.html">SVG Gradients</a> &nbsp;| &nbsp;
-        <a href="../blur/svg_blur.html">SVG Blur</a>
-    </p>
+    <a href="../index.html">Index</a> &nbsp;| &nbsp;
+    <a href="../shapes/svg_shapes.html">SVG Shapes</a> &nbsp;| &nbsp;
+    <a href="">SVG Text</a> &nbsp;| &nbsp;
+    <a href="">SVG Shadows</a> &nbsp;| &nbsp;
+    <a href="svg_gradients.html">SVG Gradients</a> &nbsp;| &nbsp;
+    <a href="../blur/svg_blur.html">SVG Blur</a>
 </nav>
 
-<article>
-    <section id="intro">
-        <h2>Einleitung</h2>
-        <p>
-            SVG kann auch Text verarbeiten. Dabei wird jedes Textelement genauso wie andere Elemente gerendert. Deswegen können auch die verschiedenen Features auf Text angewendet werden.
-        </p>
-    </section>
+<section id="intro">
+    <h2>Einleitung</h2>
+    <p>
+        SVG kann auch Text verarbeiten. Dabei wird jedes Textelement genauso wie andere Elemente gerendert. Deswegen
+        können auch die verschiedenen Features auf Text angewendet werden.
+    </p>
+</section>
 
-    <section class="left" id="p1">
-        <h2>Ein Textelement definieren</h2>
-        <p>
-            Man beginnt ein SVG Textelement, indem man den Tag <b>&lt;text&gt;</b> benutzt. Danach schließt man den Tag wieder mit <b>&lt;/text&gt;</b>. Dazwischen kann man nun den Text, der angezeigt werden soll, schreiben. <br />
-            In dem Text-Tag kann man verschiedene Attribute definieren: <br />
-            <ul>
-                <li>Durch die Attribute <b>x</b> und <b>y</b> kann man die Position des Textes angeben.</li>
-                <li>Außerdem kann die Textart und -größe bestimmt werdern mit <b>font-family</b> und <b>font-size</b>.</li>
-                <li>Des Weiteren kann man noch eine Textfarbe angeben mit dem Tag <b>fill</b>.</li>
-            </ul>
-            Der Code könnte dann beispielsweise so aussehen: <br />
-        <code><pre>&lt;text x="0" y="20" font-family="Roboto" fill="green" font-size="25px"&gt;Dies ist ein SVG Text.&lt;/text&gt;</pre></code>
-        </p>
-        <svg width="400" height="30">
-            <text x="0" y="20" font-family="Roboto" fill="green" font-size="25px">Dies ist ein SVG Text.</text>
-        </svg>
-    </section>
+<section class="left">
+    <h2>Ein Textelement definieren</h2>
+    <p>
+        Man beginnt ein SVG Textelement, indem man den Tag <b>&lt;text&gt;</b> benutzt. Danach schließt man den Tag
+        wieder mit <b>&lt;/text&gt;</b>. Dazwischen kann man nun den Text, der angezeigt werden soll, schreiben. <br/>
+        In dem Text-Tag kann man verschiedene Attribute definieren: <br/>
+    <ul>
+        <li>Durch die Attribute <b>x</b> und <b>y</b> kann man die Position des Textes angeben.</li>
+        <li>Außerdem kann die Textart und -größe bestimmt werdern mit <b>font-family</b> und <b>font-size</b>.</li>
+        <li>Des Weiteren kann man noch eine Textfarbe angeben mit dem Tag <b>fill</b>.</li>
+    </ul>
+    Der Code könnte dann beispielsweise so aussehen: <br/>
+    <code>&lt;text x="10" y="20" font-family="Roboto" fill="green" font-size="20px"&gt;Dies ist ein SVG Text.&lt;/text&gt;</code>
 
-    <section class="right">
-        <h2>Ein Textelement definieren</h2>
-        <p>
-            Man beginnt die Definition eines Textelements mit der Anweisung.jkdjfgsadifghjoaejföadihjtösdfgadfgkhaödfglakjdfg lkjadlkjfglkadfglkdalfgladfgladfgadflkgladkfglkjhdasfglkhjadfklgadlkfjhgladkfhg
-        </p>
-    </section>
+    <svg width="250" height="30">
+        <text x="10" y="20" font-family="Roboto" fill="green" font-size="20px">Dies ist ein SVG Text.</text>
+    </svg>
+</section>
 
-    <section class="left">
-        <h2>Ein Textelement definieren</h2>
-        <p>
-            Man beginnt die Definition eines Textelements mit der Anweisung.jkdjfgsadifghjoaejföadihjtösdfgadfgkhaödfglakjdfglk jadlkjfglkadfglkdalfgladfgladfgadflkgladkfglkjhdasfglkhjadfklgadlkfjhgladkfhg
-        </p>
-    </section>
+<section class="right">
+    <h2>Rotation eines Textelementes</h2>
+    <p>
+        Man kann einen in SVG definierten Text auch drehen. Dies kann man durch <b>transform="rotate(GRAD X,Y)"</b> als
+        Attribut erreichen. <br/>
+        Die Gradzahl gibt dabei an, um wie viel Grad der Text gedreht werden soll. X und Y sind der Punkt, um den der
+        Text gedreht werden soll. <br/><br/>
+        Ein Beispiel mit dem Attribut transform="rotate(10 20,50)" sieht dann so aus: <br/>
+    </p>
+    <svg width="250" height="70">
+        <text x="10" y="20" font-family="Roboto" fill="green" font-size="20px" transform="rotate(10 20,50)">Dieser Text
+            wurde rotiert!
+        </text>
+    </svg>
+</section>
 
-    <section class="right">
-        <h2>Ein Textelement definieren</h2>
-        <p>
-            Man beginnt die Definition eines Textelements mit der Anweisung.jkdjfgsadifghjoaejföadihjtösdfgadfgkhaödfglakjdfglk jadlkjfglkadfglkdalfgladfgladfgadflkgladkfglkjhdasfglkhjadfklgadlkfjhgladkfhg
-        </p>
-    </section>
-</article>
+<section class="left">
+    <h2>Mehrere Zeilen</h2>
+    <p>
+        Text in SVG kann sich auch über mehrere Zeilen erstrecken. Dafür definiert man nach dem Text-Tag ein <b>&lt;tspan&gt;</b>-Tag.
+        <br/>
+        Dieses übernimmt die Attribute vom Text-Tag, kann aber durch eigene Attribute erweitert werden. Mindestens
+        sollten jedoch X und Y angegeben werden. <br/><br/>
+        Ein Beispiel würde dann so als Code aussehen: <br/>
+        <code>&lt;text x="0" y="20" font-family="Roboto" fill="green" font-size="20px" transform="rotate(20 20,50)"&gt;Dieser
+            Text hat mehrere Zeilen: <br/>
+            &nbsp;&lt;tspan x="0" y="40"&gt;Zeile 1&lt;/tspan&gt; <br/>
+            &nbsp;&lt;tspan x="0" y="60"&gt;Zeile 2&lt;/tspan&gt; <br/>
+            &lt;/text></code>
+    </p>
+    <svg width="300" height="70">
+        <text x="10" y="20" font-family="Roboto" fill="green" font-size="20px" transform="rotate(10 20,50)">Dieser Text
+            hat mehrere Zeilen:
+            <tspan x="10" y="40">Zeile 1</tspan>
+            <tspan x="10" y="60">Zeile 2</tspan>
+        </text>
+    </svg>
+</section>
+
+<section class="right">
+    <h2>Text mit Link</h2>
+    <p>
+        Ein SVG-Text kann auch als Link fungieren. <br/>
+        Dies geht ganz einfach, indem man den Text-Tag mit einem <b>&lt;a&gt;</b>-Tag umschließt. Dort schreibt man in
+        das <b>href</b>-Attribut einfach dann den Link hinein.
+    </p>
+    <svg width="600" height="30">
+        <a href="http://google.de" target="_blank">
+            <text x="10" y="20" font-family="Roboto" fill="green" font-size="20px">Dieser Text öffnet in einem neuen
+                Fenster google.de
+            </text>
+        </a>
+    </svg>
+</section>
 </body>
 </html>
