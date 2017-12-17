@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Hausarbeit 2017 - SVG Schatten</title>
+    <link href="../shared.css" rel="stylesheet">
+    <link href="svg_shadows_.css" rel="stylesheet">
+</head>
+<body>
+<div class="tabelle">
+
+    <!-- menu -->
+
+    <div class="zeile">
+        <div class="zelle_menu_oben">
+            <h1>Schatten 🤔</h1>
+
+            <div class="tabelle">
+                <div class="zeile">
+                    <div class="zelle_menu_unten" id="navbar">
+                        <a href="../index.html">Index</a> &nbsp;| &nbsp;
+                        <a href="../shapes/svg_shapes.html">SVG Shapes</a> &nbsp;| &nbsp;
+                        <a href="../text/svg_text.html">SVG Text</a> &nbsp;| &nbsp;
+                        <a href="./svg_shadows.html">SVG Shadows</a> &nbsp;| &nbsp;
+                        <a href="../gradients/svg_gradients.html">SVG Gradients</a> &nbsp;| &nbsp;
+                        <a href="../blur/svg_blur.html">SVG Blur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mein Text -->
+
+<div class="tabelle">
+    <div class="zeile">
+        <div class="zelle_text boxblur">
+            <h2>Einleitung</h2>
+            <p>SVG ermöglicht das Hinzufügen von Schlagschatten zu Grafiken. Sie werden innerhalb eines SVG-Elements
+                in einem &lt;defs&gt;-Element (für <i>definitions</i>)
+                definiert. Als Beispiel soll ein Schlagschatten zu einem SVG Element hinzugefügt werden.</p>
+        </div>
+    </div>
+
+
+    <div class="tabelle">
+        <div class="zeile">
+            <div class="zelle_text boxblur">
+                <h2>SVG-Element definieren</h2>
+                <p>Zunächst benötigen wir ein SVG-Element. Für dieses Beispiel benutzen wir ein umgedrehtes Dreieck,
+                    welches mit <a href="https://inkscape.org/de/">Inkscape</a> erstellt wurde.</p>
+            </div>
+            <div class="zelle_text boxblur">
+                <svg width="120px" height="120px">
+                    <polygon points="10,10 110,10 60,110" style="fill:#004ba0" stroke="black" stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+        <div class="zeile">
+            <div class="zelle_text boxblur">
+                <h2>SVG-Element dublizieren und verschieben</h2>
+                <p>Nun wollen wir das SVG-Element dublizieren und leicht versetzt hinter dem Dreieck abilden.
+                    Dazu erstellen wir <i>Definitions</i> in einem &lt;def&gt;-Element. Im &lt;def&gt;-Element erstellen
+                    wir ein &lt;filter&gt;-Element, das eine id erhält, um es später anzusprechen.
+                    Im &lt;filter&gt;-Element definieren wir nun unseren Schlagschatten als ein
+                    &lt;feOffset&gt;-Element. Hier definiert in="SourceGraphic" den Effekt für das ganze
+                    Element und <i>dx</i> und <i>dy</i> geben die Position des Schattens an. &lt;feBlend&gt; verbindet
+                    anschließend unser SVG-Element und die verschobene Kopie davon.
+                    Unserem Polygon-Element weisen wir nun mit filter="url(#schatten)" den Filter mit der <i>id</i> schatten
+                    zu.</p>
+            </div>
+            <div class="zelle_text boxblur">
+                <svg width="140px" height="140px">
+                    <defs>
+                        <filter id="schatten" x="0" y="0" width="200%" height="200%">
+                            <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+                            <feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+                        </filter>
+                    </defs>
+                    <polygon points="10,10 110,10 60,110" style="fill:#004ba0" stroke="black" stroke-width="3"
+                             filter="url(#schatten)"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="zeile">
+            <div class="zelle_text boxblur">
+                <h2>Blur hinzufügen</h2>
+                <p>Jetzt werden wir einen Blur zu dem hinteren SVG-Element hinzufügen. Dazu nutzen wir den
+                    <i>Gaussian Blur</i>. Ein Tutorial dazu findest du <a href="../blur/svg_blur.html">hier</a>.</p>
+            </div>
+            <div class="zelle_text boxblur">
+                <svg height="160" width="160">
+                    <defs>
+                        <filter id="schatten2" x="0" y="0" width="200%" height="200%">
+                            <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                        </filter>
+                    </defs>
+                    <polygon class="animation" points="10,10 110,10 60,110" style="fill:#004ba0 " stroke="black" stroke-width="3"
+                             filter="url(#schatten2)"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="zeile">
+            <div class="zelle_text boxblur">
+                <h2>Schwarzen Schatten verwenden</h2>
+                <p>Um einen schwarzen Schatten zu erzeugen, nutzen wir <i>in="SourceAlpha"</i> in dem
+                    &lt;feOffset&gt;-Element.</p>
+            </div>
+            <div class="boxblur zelle_text">
+                <svg height="160" width="160">
+                    <defs>
+                        <filter id="schatten3" x="0" y="0" width="200%" height="200%">
+                            <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                        </filter>
+                    </defs>
+                    <polygon class="animation" points="10,10 110,10 60,110" style="fill:#004ba0" stroke="black" stroke-width="3"
+                             filter="url(#schatten3)"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
